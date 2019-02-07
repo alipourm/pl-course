@@ -1,0 +1,77 @@
+Input file:
+Q
+!Q
+)Q
+P <=> Q
+( P /\ Q )
+!Q)P!
+( P \/ Q ) , ( X => Y )
+
+
+
+/**************************************************/
+
+
+
+Input #1:
+---------
+
+    Proposition : Q
+    Lexer       : [ ID ]
+    Parser      : [ propositions, proposition, atomic, ID, more-proposition, epsilon ]
+
+
+
+Input #2:
+---------
+
+    Proposition : !Q
+    Lexer       : [ NOT, ID ]
+    Parser      : [ propositions, proposition, compound, NOT, proposition, atomic, ID, more-proposition, epsilon ]
+
+
+
+Input #3:
+---------
+
+    Proposition : )Q
+    Lexer       : [ RPAR, ID ]
+    Parser      : Syntax Error at line 3 column 1.
+
+
+
+Input #4:
+---------
+
+    Proposition : P <=> Q
+    Lexer       : [ ID, IFF, ID ]
+    Parser      : [ propositions, proposition, compound, atomic, ID, connective, IFF, proposition, atomic, ID, more-proposition, epsilon ]
+
+
+
+Input #5:
+---------
+
+    Proposition : ( P /\ Q )
+    Lexer       : [ LAPR, ID, AND, ID, RPAR ]
+    Parser      : [ propositions, proposition, compound, LAPR, proposition, compound, atomic, ID, connective, AND, proposition, atomic, ID, RPAR, more-proposition, epsilon ]
+
+
+
+Input #6:
+---------
+
+    Proposition : !Q)P!
+    Lexer       : [ NOT, ID, RPAR, ID, NOT ]
+    Parser      : Syntax Error at line 6 column 3.
+
+
+
+Input #7:
+---------
+
+    Proposition : ( P \/ Q ) , ( X => Y )
+    Lexer       : [ LAPR, ID, OR, ID, RPAR, COMMA, LAPR, ID, IMPLIES, ID, RPAR ]
+    Parser      : [ propositions, proposition, compound, LAPR, proposition, compound, atomic, ID, connective, OR, proposition, atomic, ID, RPAR, more-proposition, comma, proposition, compound, LAPR, proposition, compound, atomic, ID, connective, IMPLIES, proposition, atomic, ID, RPAR ]
+
+
