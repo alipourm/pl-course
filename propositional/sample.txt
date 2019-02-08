@@ -72,6 +72,6 @@ Input #7:
 
     Proposition : ( P \/ Q ) , ( X => Y )
     Lexer       : [ LAPR, ID, OR, ID, RPAR, COMMA, LAPR, ID, IMPLIES, ID, RPAR ]
-    Parser      : [ propositions, proposition, compound, LAPR, proposition, compound, atomic, ID, connective, OR, proposition, atomic, ID, RPAR, more-proposition, comma, proposition, compound, LAPR, proposition, compound, atomic, ID, connective, IMPLIES, proposition, atomic, ID, RPAR ]
+    Parser      : [ propositions, proposition, compound, LAPR, proposition, compound, atomic, ID, connective, OR, proposition, atomic, ID, RPAR, more-proposition, comma, propositions, proposition, compound, LAPR, proposition, compound, atomic, ID, connective, IMPLIES, proposition, atomic, ID, RPAR, more-proposition, epsilon ]
 
 
